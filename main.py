@@ -7,7 +7,7 @@ import rungeKutta
 
 
 def f(x, y):
-    return y ** 2 + x
+    return y ** 2 + x+2
 
 
 x, y = euler.euler(f=f, h=0.1, y0=0, xn=1, x0=0)
