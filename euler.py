@@ -1,17 +1,12 @@
+import creator_vectors_and_n
+
+
 def euler(f, h, y0, xn, x0):
-    eps = int(round((xn-x0)/h))
-    y = []
-    for i in range(eps + 1):
-        y.append(0)
-    x = []
-    for i in range(eps + 1):
-        x.append(0)
-    y[0] = y0
-    x[0] = x0
+    x, y, n = creator_vectors_and_n.create_x_y_n(xn, x0, h, y0)
     i = 0
-    while i < eps:
+    while i < n:
         y[i + 1] = y[i] + h * f(x[i], y[i])
-        if y[i+1] > 200000:
+        if y[i + 1] > 200000:
             break
         x[i + 1] = x[i] + h
         i += 1
